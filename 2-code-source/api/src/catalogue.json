@@ -1,0 +1,699 @@
+{
+  "version": "2026-10-07",
+  "categories": [
+    {
+      "slug": "visage",
+      "title": "Soins du visage",
+      "title_en": "Facials",
+      "intro": "VIE Collection : chaque soin est personnalisé après un diagnostic de peau.",
+      "intro_en": "VIE Collection: every treatment is tailored after a skin diagnosis.",
+      "services": [
+        [
+          "Soin Découverte",
+          "Discovery Facial",
+          "Nettoyant, purifiant et hydratant : peau nette, fraîche et lumineuse, idéal pour une première visite. Sur mesure : spatule ultrasonique.",
+          "Cleansing, purifying & hydrating: clean, fresh and glowing skin, ideal for a first visit. Tailored: ultrasonic spatula.",
+          850,
+          45,
+          false,
+          "",
+          ""
+        ],
+        [
+          "Soin Intensif Rénovateur",
+          "Intensive Renewal Facial",
+          "Resurfaçant, peeling acide 30 % et dermabrasion : effet nouvelle peau, imperfections atténuées, teint unifié. Sur mesure : masque neutralisant post-peeling, cryo LED apaisant.",
+          "Resurfacing, 30% acid peel and dermabrasion: new-skin effect, softened imperfections, even complexion. Tailored: post-peel neutralizing mask, soothing cryo LED.",
+          1150,
+          60,
+          false,
+          "",
+          ""
+        ],
+        [
+          "Soin Mesoforce",
+          "Mesoforce Facial",
+          "Revitalisant repulpant inspiré de la mésothérapie : hydratation intense, détox, effet repulpant. Sur mesure : rouleau méso stimulant, chaleur & vibration, modelage.",
+          "Revitalizing and plumping, mesotherapy-inspired: intense hydration, detox, plumping effect. Tailored: stimulating meso roller, heat & vibration, sculpting massage.",
+          1150,
+          60,
+          false,
+          "",
+          ""
+        ],
+        [
+          "Soin Mela Bright Éclat & Taches",
+          "Mela Bright Radiance & Dark Spots Facial",
+          "Triple exfoliation et actifs éclaircissants : teint lumineux et uniformisé, taches estompées. Sur mesure : stylo de modelage (dermo-stimulation mécanique), LED.",
+          "Triple exfoliation and brightening actives: luminous, even complexion, faded spots. Tailored: modeling pen (mechanical dermo-stimulation), LED light.",
+          1150,
+          60,
+          false,
+          "",
+          ""
+        ],
+        [
+          "Soin 3 Dimensions Rides",
+          "3 Dimensions Wrinkle Facial",
+          "Lissant redensifiant : agit sur tous les types de rides, peau lissée et repulpée, contours du visage redessinés. Sur mesure : massage anti-âge / lifting manuel, modelage du regard, microcourants, LED.",
+          "Smoothing and redensifying: targets every type of wrinkle, smoothed and plumped skin, redefined facial contours. Tailored: anti-ageing massage / manual lifting, eye sculpting, microcurrent, LED light.",
+          1250,
+          60,
+          false,
+          "",
+          ""
+        ]
+      ]
+    },
+    {
+      "slug": "corps",
+      "title": "Massages",
+      "title_en": "Massages",
+      "intro": "Chaque massage est adapté à vos besoins : signature et relaxation, performance et récupération, silhouette et bien-être.",
+      "intro_en": "Every massage is tailored to your needs: signature and relaxation, performance and recovery, body and wellness.",
+      "services": [
+        [
+          "Massage oriental OPAAL",
+          "OPAAL Oriental Massage",
+          "Massage enveloppant à l'huile d'argan pour relâcher les tensions et nourrir la peau. Fragrance au choix : ambre, musc ou fleur d'oranger.",
+          "An enveloping argan oil massage to release tension and nourish the skin. Choice of fragrance: amber, musk or orange blossom.",
+          700,
+          60,
+          false,
+          "Signature & relaxation",
+          "Signature & relaxation"
+        ],
+        [
+          "Massage oriental OPAAL",
+          "OPAAL Oriental Massage",
+          "",
+          "",
+          950,
+          90,
+          false,
+          "Signature & relaxation",
+          "Signature & relaxation"
+        ],
+        [
+          "Deep tissue",
+          "Deep Tissue Massage",
+          "Massage aux pressions lentes et profondes, ciblant les tensions musculaires pour une détente intense.",
+          "Slow, deep pressure targeting muscle tension for lasting relaxation.",
+          800,
+          60,
+          false,
+          "Signature & relaxation",
+          "Signature & relaxation"
+        ],
+        [
+          "Deep tissue",
+          "Deep Tissue Massage",
+          "",
+          "",
+          1050,
+          90,
+          false,
+          "Signature & relaxation",
+          "Signature & relaxation"
+        ],
+        [
+          "Massage du golfeur",
+          "Golf Recovery Massage",
+          "Massage ciblant les zones sollicitées pendant le jeu : dos, épaules, bras, mains et jambes. Idéal après un parcours.",
+          "Targets the muscles used during golf: back, shoulders, arms, hands and legs. Ideal after a round.",
+          550,
+          45,
+          false,
+          "Performance & récupération",
+          "Performance & recovery"
+        ],
+        [
+          "Massage du golfeur",
+          "Golf Recovery Massage",
+          "",
+          "",
+          700,
+          60,
+          false,
+          "Performance & récupération",
+          "Performance & recovery"
+        ],
+        [
+          "Massage dos, nuque & épaules",
+          "Back, Neck & Shoulders Massage",
+          "Massage ciblé pour détendre les tensions accumulées dans le haut du corps.",
+          "A targeted massage to relieve tension in the upper body.",
+          400,
+          30,
+          false,
+          "Performance & récupération",
+          "Performance & recovery"
+        ],
+        [
+          "Massage sportif",
+          "Sports Massage",
+          "Massage tonique pour préparer les muscles à l'effort ou favoriser la récupération après une activité sportive. Au choix : huile arnica-gaulthérie ou cryo-arnica (effet froid).",
+          "An invigorating massage to prepare muscles for physical activity or support post-workout recovery. Choice of wintergreen arnica oil or cooling cryo-arnica.",
+          800,
+          60,
+          false,
+          "Performance & récupération",
+          "Performance & recovery"
+        ],
+        [
+          "Massage sportif",
+          "Sports Massage",
+          "",
+          "",
+          1050,
+          90,
+          false,
+          "Performance & récupération",
+          "Performance & recovery"
+        ],
+        [
+          "Madérothérapie",
+          "Wood Therapy",
+          "Massage dynamique utilisant des instruments en bois pour stimuler les tissus, tonifier et travailler l'apparence de la silhouette.",
+          "A dynamic massage using wooden tools to stimulate tissues, tone and improve the appearance of body contours.",
+          800,
+          60,
+          false,
+          "Corps & bien-être",
+          "Body & wellness"
+        ],
+        [
+          "Massage silhouette",
+          "Body Contour Massage",
+          "Massage manuel associant palper-rouler et techniques drainantes pour cibler les zones souhaitées et améliorer l'apparence de la silhouette. Au choix : baume ou huile minceur.",
+          "A targeted massage combining skin-rolling and drainage techniques to improve the appearance of body contours. Choice of body-contouring balm or oil.",
+          800,
+          60,
+          false,
+          "Corps & bien-être",
+          "Body & wellness"
+        ],
+        [
+          "Jambes légères",
+          "Light Legs Treatment",
+          "Soin délassant pour soulager la sensation de jambes lourdes et fatiguées. Idéal après un voyage, un long vol ou une journée active.",
+          "A soothing treatment to relieve the feeling of heavy, tired legs. Ideal after travelling or a long, active day.",
+          550,
+          45,
+          false,
+          "Corps & bien-être",
+          "Body & wellness"
+        ]
+      ]
+    },
+    {
+      "slug": "cheveux",
+      "title": "Coiffure",
+      "title_en": "Hair",
+      "intro": "Tarifs établis selon la longueur, la densité et le travail technique nécessaire ; un supplément peut s'appliquer. Diagnostic et devis avant toute transformation.",
+      "intro_en": "Prices are based on hair length, density and the technical work required; a surcharge may apply. Consultation and quote before any transformation.",
+      "services": [
+        [
+          "Shampooing + brushing",
+          "Shampoo & blow-dry",
+          "Shampooing et brushing.",
+          "Shampoo and blow-dry.",
+          280,
+          45,
+          false,
+          "Coiffure femme",
+          "Women's hair"
+        ],
+        [
+          "Coupe femme",
+          "Women's haircut",
+          "Peut s'ajouter à tout forfait.",
+          "Can be added to any package.",
+          250,
+          30,
+          false,
+          "Coiffure femme",
+          "Women's hair"
+        ],
+        [
+          "Shampooing + coupe + brushing",
+          "Shampoo, cut & blow-dry",
+          "Shampooing, coupe et brushing.",
+          "Shampoo, cut and blow-dry.",
+          450,
+          60,
+          false,
+          "Coiffure femme",
+          "Women's hair"
+        ],
+        [
+          "Forfait soin et brushing",
+          "Treatment & blow-dry package",
+          "Shampooing, soin express, brushing.",
+          "Shampoo, express treatment, blow-dry.",
+          500,
+          60,
+          false,
+          "Coiffure femme",
+          "Women's hair"
+        ],
+        [
+          "Forfait signature",
+          "Signature package",
+          "Shampooing, coupe, soin, brushing.",
+          "Shampoo, cut, treatment, blow-dry.",
+          650,
+          90,
+          false,
+          "Coiffure femme",
+          "Women's hair"
+        ],
+        [
+          "Forfait homme",
+          "Men's package",
+          "Shampooing, coupe, coiffage, soin.",
+          "Shampoo, cut, styling, treatment.",
+          350,
+          60,
+          false,
+          "Homme",
+          "Men"
+        ],
+        [
+          "Shampooing + brushing",
+          "Shampoo & blow-dry",
+          "",
+          "",
+          180,
+          30,
+          false,
+          "Enfants (- 12 ans)",
+          "Children (under 12)"
+        ],
+        [
+          "Shampooing + coupe + brushing",
+          "Shampoo, cut & blow-dry",
+          "",
+          "",
+          250,
+          45,
+          false,
+          "Enfants (- 12 ans)",
+          "Children (under 12)"
+        ],
+        [
+          "Coloration racines",
+          "Root colour",
+          "Shampooing et brushing inclus.",
+          "Shampoo and blow-dry included.",
+          650,
+          105,
+          false,
+          "Coloration",
+          "Colour"
+        ],
+        [
+          "Forfait patine / gloss",
+          "Toner / gloss package",
+          "Shampooing et brushing inclus.",
+          "Shampoo and blow-dry included.",
+          650,
+          75,
+          false,
+          "Coloration",
+          "Colour"
+        ],
+        [
+          "Forfait coloration (racines + patine)",
+          "Colour package (roots + toner)",
+          "Shampooing et brushing inclus.",
+          "Shampoo and blow-dry included.",
+          950,
+          135,
+          false,
+          "Coloration",
+          "Colour"
+        ],
+        [
+          "Coloration complète",
+          "Full colour",
+          "Shampooing et brushing inclus.",
+          "Shampoo and blow-dry included.",
+          950,
+          120,
+          false,
+          "Coloration",
+          "Colour"
+        ],
+        [
+          "Balayage sur mesure",
+          "Custom balayage",
+          "Patine, soin express et brushing inclus.",
+          "Toner, express treatment and blow-dry included.",
+          1350,
+          210,
+          true,
+          "Coloration",
+          "Colour"
+        ],
+        [
+          "Transformation",
+          "Transformation",
+          "Décoloration, coloration, patine, soin, brushing.",
+          "Lightening, colour, toner, treatment, blow-dry.",
+          2200,
+          270,
+          true,
+          "Coloration",
+          "Colour"
+        ],
+        [
+          "Retouche balayage & contouring",
+          "Balayage & contouring touch-up",
+          "Shampooing et brushing inclus.",
+          "Shampoo and blow-dry included.",
+          950,
+          150,
+          false,
+          "Coloration",
+          "Colour"
+        ],
+        [
+          "Patine / gloss seule",
+          "Toner / gloss only",
+          "Patine seule.",
+          "Toner only.",
+          370,
+          30,
+          false,
+          "Coloration",
+          "Colour"
+        ],
+        [
+          "Option : soin protecteur technique",
+          "Option: technical protective treatment",
+          "À ajouter à toute coloration, balayage ou transformation. Au choix : Metal Detox ou Absolut Repair.",
+          "To add to any colour, balayage or transformation. Choice of Metal Detox or Absolut Repair.",
+          250,
+          30,
+          false,
+          "Coloration",
+          "Colour"
+        ],
+        [
+          "Soin profond expert",
+          "Expert deep treatment",
+          "Shampooing et brushing inclus. Au choix : Metal Detox ou Absolut Repair Molecular.",
+          "Shampoo and blow-dry included. Choice of Metal Detox or Absolut Repair Molecular.",
+          650,
+          75,
+          false,
+          "Soins capillaires",
+          "Hair treatments"
+        ],
+        [
+          "Croissance et cuir chevelu · Racines Vives",
+          "Hair growth & scalp · Racines Vives",
+          "Diagnostic, shampooing Sérioxyl, massage, activateur de densité, brushing. En option : duo sérum + dermaroller Myriam K.",
+          "Diagnosis, Sérioxyl shampoo, massage, density activator, blow-dry. Optional: Myriam K serum + dermaroller duo.",
+          750,
+          75,
+          false,
+          "Soins capillaires",
+          "Hair treatments"
+        ],
+        [
+          "Définition des boucles",
+          "Curl definition",
+          "Shampooing, masque, définition, diffusion. Au choix : L'Oréal Curl Expression ou Myriam K.",
+          "Shampoo, mask, definition, diffusing. Choice of L'Oréal Curl Expression or Myriam K.",
+          650,
+          75,
+          false,
+          "Soins capillaires",
+          "Hair treatments"
+        ],
+        [
+          "Soleil et piscine · Sun Rescue",
+          "Sun & pool · Sun Rescue",
+          "Détox chlore et sel, masque réparateur, huile protectrice, shampooing et brushing.",
+          "Chlorine and salt detox, repairing mask, protective oil, shampoo and blow-dry.",
+          650,
+          75,
+          false,
+          "Soins capillaires",
+          "Hair treatments"
+        ],
+        [
+          "Lissage brésilien Myriam K · cheveux courts",
+          "Myriam K Brazilian smoothing · short hair",
+          "Brushing inclus.",
+          "Blow-dry included.",
+          2250,
+          180,
+          false,
+          "Lissages",
+          "Smoothing"
+        ],
+        [
+          "Lissage brésilien Myriam K · cheveux longs",
+          "Myriam K Brazilian smoothing · long hair",
+          "Brushing inclus.",
+          "Blow-dry included.",
+          3200,
+          240,
+          false,
+          "Lissages",
+          "Smoothing"
+        ],
+        [
+          "Lissage français Myriam K · cheveux courts",
+          "Myriam K French smoothing · short hair",
+          "Brushing inclus.",
+          "Blow-dry included.",
+          2250,
+          180,
+          false,
+          "Lissages",
+          "Smoothing"
+        ],
+        [
+          "Lissage français Myriam K · cheveux longs",
+          "Myriam K French smoothing · long hair",
+          "Brushing inclus.",
+          "Blow-dry included.",
+          3200,
+          240,
+          false,
+          "Lissages",
+          "Smoothing"
+        ],
+        [
+          "Retouche racines lissage Myriam K",
+          "Myriam K smoothing root touch-up",
+          "Brushing inclus.",
+          "Blow-dry included.",
+          1500,
+          150,
+          false,
+          "Lissages",
+          "Smoothing"
+        ]
+      ]
+    },
+    {
+      "slug": "mains-pieds",
+      "title": "Mains & pieds",
+      "title_en": "Hands & feet",
+      "intro": "Manucure, pédicure et soins signature pour des mains et des pieds parfaitement soignés.",
+      "intro_en": "Manicure, pedicure and signature treatments for perfectly cared-for hands and feet.",
+      "services": [
+        [
+          "Manucure signature & soin des mains",
+          "Signature manicure & hand care",
+          "Traitement des ongles et des cuticules, masque, massage, sérum et crème protectrice pour les mains.",
+          "Nail and cuticle treatment, mask, massage, serum and protective hand cream.",
+          350,
+          45,
+          false,
+          "",
+          ""
+        ],
+        [
+          "Soin expert des pieds",
+          "Expert foot treatment",
+          "Gommage, masque, massage, traitement des callosités, des ongles et des cuticules.",
+          "Exfoliation, mask, massage, callus treatment, nail and cuticle care.",
+          450,
+          45,
+          false,
+          "",
+          ""
+        ],
+        [
+          "Pédicure signature & soin des jambes",
+          "Signature pedicure & leg care",
+          "Soin des pieds et des jambes : gommage, masque, massage, traitement des callosités, des ongles et des cuticules. Soin des jambes au choix : baume, arnica ou cryo-arnica.",
+          "Foot and leg care: exfoliation, mask, massage, callus treatment, nail and cuticle care. Leg care of your choice: balm, arnica or cryo-arnica.",
+          600,
+          60,
+          false,
+          "",
+          ""
+        ],
+        [
+          "Soin signature mains & pieds",
+          "Signature hands & feet treatment",
+          "Mains : masque, massage, sérum, crème protectrice, traitement des ongles et cuticules. Pieds : gommage, masque, massage, callosités, ongles et cuticules.",
+          "Hands: mask, massage, serum, protective cream, nail and cuticle treatment. Feet: exfoliation, mask, massage, calluses, nails and cuticles.",
+          750,
+          90,
+          false,
+          "",
+          ""
+        ]
+      ]
+    },
+    {
+      "slug": "epilation",
+      "title": "Épilation & sourcils",
+      "title_en": "Waxing & brows",
+      "intro": "Toutes nos épilations sont réalisées à la cire adoucissante enrichie à l'huile d'argan.",
+      "intro_en": "All waxing is done with a soothing wax enriched with argan oil.",
+      "services": [
+        [
+          "Sourcils",
+          "Eyebrows",
+          "",
+          "",
+          100,
+          null,
+          false,
+          "Visage",
+          "Face"
+        ],
+        [
+          "Option : coloration des sourcils",
+          "Option: eyebrow tint",
+          "En complément des sourcils.",
+          "In addition to eyebrows.",
+          100,
+          null,
+          false,
+          "Visage",
+          "Face"
+        ],
+        [
+          "Lèvre / duvet",
+          "Upper lip",
+          "",
+          "",
+          50,
+          null,
+          false,
+          "Visage",
+          "Face"
+        ],
+        [
+          "Aisselles",
+          "Underarms",
+          "",
+          "",
+          100,
+          null,
+          false,
+          "Corps",
+          "Body"
+        ],
+        [
+          "Maillot classique",
+          "Classic bikini",
+          "",
+          "",
+          150,
+          null,
+          false,
+          "Corps",
+          "Body"
+        ],
+        [
+          "Maillot intégral",
+          "Full bikini / Brazilian",
+          "",
+          "",
+          200,
+          null,
+          false,
+          "Corps",
+          "Body"
+        ],
+        [
+          "Demi-bras",
+          "Half arms",
+          "",
+          "",
+          150,
+          null,
+          false,
+          "Corps",
+          "Body"
+        ],
+        [
+          "Bras complet",
+          "Full arms",
+          "",
+          "",
+          200,
+          null,
+          false,
+          "Corps",
+          "Body"
+        ],
+        [
+          "Demi-jambes",
+          "Half legs",
+          "",
+          "",
+          170,
+          null,
+          false,
+          "Corps",
+          "Body"
+        ],
+        [
+          "Jambes entières",
+          "Full legs",
+          "",
+          "",
+          250,
+          null,
+          false,
+          "Corps",
+          "Body"
+        ],
+        [
+          "Dos",
+          "Back",
+          "",
+          "",
+          220,
+          null,
+          false,
+          "Corps",
+          "Body"
+        ],
+        [
+          "Torse (homme)",
+          "Chest (men)",
+          "",
+          "",
+          220,
+          null,
+          false,
+          "Corps",
+          "Body"
+        ]
+      ]
+    }
+  ]
+}

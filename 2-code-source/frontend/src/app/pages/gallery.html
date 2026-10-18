@@ -1,0 +1,31 @@
+<app-page-hero crumb="Galerie" eyebrow="Galerie"
+  lead="Spa, massages, soins du visage et coiffure : découvrez l’univers OPAAL en images."
+  slot="gallery.hero" ghost="Univers" badge="Spa · Visage<br>Massages · Coiffure">
+  <h1 data-split>{{ 'Notre' | tr }} <em>{{ 'univers' | tr }}</em>.</h1>
+  <div actions>
+    <a class="btn btn-dark btn-shine" [href]="('/galerie' | lp) + '#galerie'">{{ 'Voir la galerie' | tr }} <app-arrow /></a>
+    <a class="link-arrow" [href]="booking.url()" target="_blank" rel="noopener" (click)="booking.track('Page Galerie')">{{ 'Réserver' | tr }} <app-arrow /></a>
+  </div>
+</app-page-hero>
+
+<section class="section" id="galerie">
+  <div class="container">
+    <div class="filters" data-anim="up" role="group" [attr.aria-label]="'Filtrer les photos' | tr">
+      @for (f of filters(); track f.key) {
+        <button type="button" class="chip" [class.active]="filter() === f.key" [attr.aria-pressed]="filter() === f.key" (click)="setFilter(f.key)">{{ f.label | tr }}</button>
+      }
+    </div>
+    @for (g of [generation()]; track g) {
+      <div class="masonry">
+        @for (item of items(); track $index; let i = $index) {
+          <figure class="m-item" data-lightbox [class.pop]="g > 0" [style.--i]="i" data-anim="up" [style.--d]="((i % 3) * 0.1).toFixed(1) + 's'" (click)="open(i)">
+            <img [src]="item.src" [alt]="item.caption" loading="lazy" [attr.width]="item.w" [attr.height]="item.h" />
+            <figcaption class="cap">{{ item.caption }}</figcaption>
+          </figure>
+        }
+      </div>
+    }
+  </div>
+</section>
+
+<app-cta />

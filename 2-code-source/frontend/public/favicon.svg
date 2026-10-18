@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#F7F3EE"/>
+  <g transform="translate(6.5 14) scale(0.0655)">
+    <svg viewBox="572 672 786 590" width="786" height="590">
+      <defs><clipPath id="b"><rect x="560" y="600" width="820" height="648"/></clipPath></defs>
+      <line x1="662" y1="1078" x2="1269" y2="1078" stroke="#C8A95D" stroke-width="40"/>
+      <g clip-path="url(#b)" fill="none" stroke="#121212" stroke-width="44" stroke-miterlimit="10">
+        <polyline points="584.2,1280 810,716 1036.3,1280"/>
+        <polyline points="894.7,1280 1121,716 1346.8,1280"/>
+      </g>
+    </svg>
+  </g>
+</svg>

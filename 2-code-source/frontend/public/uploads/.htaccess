@@ -1,0 +1,13 @@
+# Photos envoyées depuis l'espace propriétaire : seules les images sont servies,
+# aucun script ne peut être exécuté ou affiché depuis ce dossier.
+Options -Indexes -ExecCGI
+<FilesMatch ".">
+  Require all denied
+</FilesMatch>
+<FilesMatch "\.(jpe?g|png|webp|gif)$">
+  Require all granted
+</FilesMatch>
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Content-Security-Policy "default-src 'none'; img-src 'self'; sandbox"
+</IfModule>

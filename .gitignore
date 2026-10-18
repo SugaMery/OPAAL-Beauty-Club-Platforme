@@ -1,0 +1,21 @@
+# Secrets et données : jamais sur GitHub
+**/api/config.php
+**/api/data/*.sqlite
+**/api/data/*.sqlite-*
+
+# Dossiers et archives de publication (ils contiennent api/config.php)
+/1-site-pret-a-mettre-en-ligne/
+/3-site-a-publier/
+*.zip
+
+# Dépendances et fichiers générés
+node_modules/
+.angular/
+dist/
+
+# Images envoyées depuis l'espace propriétaire
+2-code-source/uploads/*
+!2-code-source/uploads/.htaccess
+
+.DS_Store
+Thumbs.db

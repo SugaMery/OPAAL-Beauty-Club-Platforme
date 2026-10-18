@@ -1,0 +1,123 @@
+# ============================================================
+#  OPAAL Beauty Club — configuration Apache sécurisée
+#  À placer à la racine du site (ex. public_html/opaalbeautyclub.com/.htaccess).
+#  Ce fichier est copié à la racine du site par « ng build ».
+# ============================================================
+Options -Indexes -MultiViews
+DirectoryIndex index.html
+AddDefaultCharset UTF-8
+DirectorySlash Off
+AddType application/manifest+json .webmanifest
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # ---------- 1. HTTPS + domaine sans « www » ----------
+  RewriteCond %{HTTPS} off [OR]
+  RewriteCond %{HTTP_HOST} ^www\. [NC]
+  RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+
+  # ---------- 2. Sécurité ----------
+  # Pages d'erreur : toujours servies (sinon une requête bloquée bloquerait aussi sa page d'erreur)
+  RewriteRule ^(en/)?erreur-404/index\.html$ - [L]
+
+  # Méthodes HTTP inutiles (TRACE lui-même doit être coupé par l'hébergeur : TraceEnable off)
+  RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK|DEBUG|CONNECT)$ [NC]
+  RewriteRule ^ - [F,L]
+
+  # Fichiers et dossiers cachés (.git, .env, .htaccess…) — sauf .well-known (certificat SSL)
+  RewriteRule (^|/)\.(?!well-known(/|$)) - [F,L]
+
+  # Sauvegardes, bases de données, journaux, archives et fichiers de configuration
+  RewriteRule \.(bak|backup|old|orig|save|swp|swo|tmp|temp|log|sql|sqlite|sqlite3|db|ini|env|conf|cfg|sh|bat|ps1|lock|dist|md|yml|yaml|map|zip|tar|gz|tgz|rar|7z)$ - [F,L,NC]
+  RewriteRule (^|/)(composer\.(json|lock)|package(-lock)?\.json|web\.config|error_log|php_errorlog)$ - [F,L,NC]
+
+  # Requêtes malveillantes : traversée de dossiers, scripts injectés, injections SQL, fichiers système
+  RewriteCond %{THE_REQUEST} (\.\./|\.\.%2f|%2e%2e|%00|%0d%0a) [NC,OR]
+  RewriteCond %{QUERY_STRING} (<|%3C)[^&]*script [NC,OR]
+  RewriteCond %{QUERY_STRING} (javascript|vbscript):|data:text/html [NC,OR]
+  RewriteCond %{QUERY_STRING} (base64_(en|de)code|GLOBALS(=|\[)|_REQUEST(=|\[)|mosConfig) [NC,OR]
+  RewriteCond %{QUERY_STRING} (union[^a-z]+(all[^a-z]+)?select|information_schema|sleep\(|benchmark\() [NC,OR]
+  RewriteCond %{QUERY_STRING} (etc/passwd|proc/self|boot\.ini|cmd\.exe|/bin/(ba)?sh) [NC]
+  RewriteRule ^ - [F,L]
+
+  # Outils de piratage automatiques connus
+  RewriteCond %{HTTP_USER_AGENT} (sqlmap|nikto|acunetix|nessus|masscan|zgrab|wpscan|dirbuster|gobuster|havij|netsparker|nuclei) [NC]
+  RewriteRule ^ - [F,L]
+
+  # Sondes WordPress / phpMyAdmin (le site n'en utilise pas)
+  RewriteRule ^(wp-admin|wp-login|wp-content|wp-includes|wp-json|xmlrpc|phpmyadmin|pma|myadmin|cgi-bin)(/|\.php|$) - [F,L,NC]
+
+  # ---------- 3. L'API a ses propres règles (dossier /api) ----------
+  RewriteRule ^api(/|$) - [L]
+
+  # Aucun script exécutable en dehors de l'API
+  RewriteRule \.(php\d?|phtml|phar|phps|pht|cgi|pl|py|asp|aspx|jsp|shtml)$ - [F,L,NC]
+
+  # Photos envoyées (/uploads) : uniquement des images
+  RewriteRule ^uploads/(?!.+\.(jpe?g|png|webp|gif)$) - [F,L,NC]
+
+  # ---------- 4. Adresses du site ----------
+  # Supprime le « / » final (/soins/ -> /soins)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+  # Fichiers existants (images, scripts, styles…)
+  RewriteCond %{REQUEST_FILENAME} -f
+  RewriteRule ^ - [L]
+
+  # Pages pré-rendues, en français et en anglais : /soins -> /soins/index.html, /en/soins -> /en/soins/index.html
+  RewriteCond %{REQUEST_FILENAME}/index.html -f
+  RewriteRule ^(.+)$ /$1/index.html [L]
+
+  # Espace propriétaire (rendu dans le navigateur)
+  RewriteRule ^admin(/.*)?$ /index.csr.html [L]
+
+  # Article de blog pas encore écrit en HTML statique : rendu dans le navigateur (FR et EN)
+  RewriteRule ^(en/)?blog/[a-z0-9-]+$ /index.csr.html [L]
+</IfModule>
+
+# Page 404 élégante (la vraie erreur 404 est renvoyée à Google ; version anglaise : voir en/.htaccess)
+ErrorDocument 404 /erreur-404/index.html
+ErrorDocument 403 /erreur-404/index.html
+
+# ---------- 5. En-têtes de sécurité ----------
+<IfModule mod_headers.c>
+  Header always unset X-Powered-By
+  Header unset X-Powered-By
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set X-Permitted-Cross-Domain-Policies "none"
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()"
+  Header always set Strict-Transport-Security "max-age=31536000"
+  # Sources autorisées : le site lui-même, Google Fonts, la carte Google Maps et les images https
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; frame-src 'self' https://www.google.com https://maps.google.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
+
+  # Fichiers avec empreinte (main-XXXX.js, chunk-XXXX.js, styles-XXXX.css) : cache long
+  <FilesMatch "-[A-Za-z0-9_-]{8}\.(js|css)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  # Pages HTML : toujours à jour
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
+
+# ---------- 6. Performances ----------
+# Images et icônes : cache 30 jours
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType image/x-icon "access plus 30 days"
+</IfModule>
+
+# Compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/javascript application/json application/xml application/manifest+json image/svg+xml
+</IfModule>

@@ -1,0 +1,93 @@
+{
+  "settings": {
+    "salon_name": "OPAAL Beauty Club",
+    "address_line1": "Amelkis 3 Club House",
+    "address_line2": "Route de Ouarzazate",
+    "city": "Marrakech",
+    "country": "Maroc",
+    "phone": "+212 6 48 41 00 70",
+    "whatsapp": "212648410070",
+    "email": "mail@opaalbeautyclub.com",
+    "notify_email": "mail@opaalbeautyclub.com",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Amelkis+3+Club+House+Route+de+Ouarzazate+Marrakech",
+    "hours": [
+      {
+        "days": "Du mardi au dimanche",
+        "time": "10h – 20h",
+        "days_en": "Tuesday to Sunday",
+        "time_en": "10am – 8pm"
+      },
+      {
+        "days": "Lundi",
+        "time": "Fermé",
+        "days_en": "Monday",
+        "time_en": "Closed"
+      }
+    ],
+    "instagram": "https://www.instagram.com/opaalbeautyclub/",
+    "facebook": "",
+    "tiktok": "",
+    "pinterest": "",
+    "currency": "DH",
+    "announcement": "Du mardi au dimanche, de 10h à 20h",
+    "access_note": "Accès ouvert aux non-résidents : indiquez au poste de garde à l’entrée d’Amelkis que vous venez chez OPAAL Beauty Club (Club House). Parking sur place."
+  },
+  "offers": [
+    {
+      "type": "formule",
+      "title": "Éclat",
+      "subtitle": "L'essentiel du club",
+      "description": "",
+      "perks": [
+        "Accès aux avantages membres",
+        "Réservation prioritaire",
+        "Suivi de votre peau"
+      ],
+      "price": "",
+      "badge": "",
+      "featured": false,
+      "active": true
+    },
+    {
+      "type": "formule",
+      "title": "Opale",
+      "subtitle": "L'équilibre parfait",
+      "description": "",
+      "perks": [
+        "Tous les avantages Éclat",
+        "Soins privilégiés toute l'année",
+        "Conseils personnalisés"
+      ],
+      "price": "",
+      "badge": "Signature",
+      "featured": true,
+      "active": true
+    },
+    {
+      "type": "formule",
+      "title": "Prestige",
+      "subtitle": "L'expérience ultime",
+      "description": "",
+      "perks": [
+        "Tous les avantages Opale",
+        "Rituels sur-mesure",
+        "Attentions exclusives"
+      ],
+      "price": "",
+      "badge": "",
+      "featured": false,
+      "active": true
+    },
+    {
+      "type": "promo",
+      "title": "Offre de bienvenue",
+      "subtitle": "Offre du moment",
+      "description": "Exemple d'offre : activez-la et personnalisez-la depuis l'espace propriétaire.",
+      "perks": [],
+      "price": "",
+      "badge": "Nouveau",
+      "featured": false,
+      "active": false
+    }
+  ]
+}

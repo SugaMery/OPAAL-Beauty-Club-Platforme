@@ -1,0 +1,40 @@
+# OPAAL — API (Apache / IONOS) — sécurisée
+Options -Indexes -MultiViews
+DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Transmet l'en-tête d'authentification (nécessaire chez certains hébergeurs, dont IONOS)
+  RewriteCond %{HTTP:Authorization} .
+  RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+  # Méthodes dangereuses et requêtes malveillantes
+  RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK|DEBUG|CONNECT)$ [NC,OR]
+  RewriteCond %{THE_REQUEST} (\.\./|\.\.%2f|%2e%2e|%00|%0d%0a) [NC]
+  RewriteRule ^ - [F,L]
+
+  # Fichiers cachés, dossiers internes, configuration et outils de développement : interdits
+  RewriteRule (^|/)\. - [F,L]
+  RewriteRule ^(src|vendor|data)(/|$) - [F,L]
+  RewriteRule ^(config|config\.example|router-dev|i18n-check)\.php$ - [F,L,NC]
+
+  # Seul index.php est exécuté
+  RewriteRule ^(?!index\.php$).+\.(php\d?|phtml|phar)$ - [F,L,NC]
+
+  # Toutes les autres adresses passent par index.php
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^ index.php [QSA,L]
+</IfModule>
+
+# Double protection des fichiers sensibles (même sans mod_rewrite)
+<FilesMatch "^(config|config\.example|router-dev|i18n-check)\.php$">
+  Require all denied
+</FilesMatch>
+<FilesMatch "\.(sqlite|sqlite3|db|json|log|bak|md|lock|ini)$">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_headers.c>
+  # Réponses de l'API : jamais indexées par Google
+  Header always set X-Robots-Tag "noindex, nofollow"
+</IfModule>

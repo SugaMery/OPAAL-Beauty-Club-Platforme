@@ -1,0 +1,4 @@
+# Version anglaise du site (/en/…) : page 404 en anglais.
+# Les autres règles (adresses, sécurité) sont celles du .htaccess de la racine.
+ErrorDocument 404 /en/erreur-404/index.html
+ErrorDocument 403 /en/erreur-404/index.html

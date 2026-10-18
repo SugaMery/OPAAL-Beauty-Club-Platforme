@@ -1,0 +1,151 @@
+<app-page-hero crumb="Soins" eyebrow="Nos soins"
+  lead="Spa, massages, soins du visage et coiffure : chaque soin est pensé pour révéler votre beauté naturelle, dans le respect de votre peau et de votre rythme."
+  slot="soins.hero" ghost="Soins" badge="Spa · Visage<br>Massages · Coiffure">
+  <h1 data-split>{{ 'L’art du soin' | tr }}<br /><em>{{ 'sur-mesure.' | tr }}</em></h1>
+  <div actions>
+    <a class="btn btn-dark btn-shine" [href]="booking.url()" target="_blank" rel="noopener" (click)="booking.track('Page Soins')">{{ 'Réserver un soin' | tr }} <app-arrow /></a>
+    <a class="link-arrow" [href]="('/soins' | lp) + '#visage'" (click)="go('visage', $event)">{{ 'Découvrir la carte' | tr }} <app-arrow /></a>
+  </div>
+</app-page-hero>
+
+<nav class="chips" [attr.aria-label]="'Catégories de soins' | tr">
+  <div class="container chips-inner">
+    @for (b of blocks(); track b.slug; let i = $index) {
+      <a class="chip" [class.active]="active() === i" [href]="('/soins' | lp) + '#' + b.slug" (click)="go(b.slug, $event)">{{ b.title }}</a>
+    }
+  </div>
+</nav>
+
+<div class="container">
+  @for (b of blocks(); track b.slug; let i = $index) {
+    <section class="carte-block" [id]="b.slug">
+      <header class="carte-head" [class.reverse]="i % 2 === 1">
+        <div class="soin-media">
+          <span class="big-num" data-parallax=".1" aria-hidden="true">{{ b.num }}</span>
+          <div class="frame" [class.arched]="b.arched" data-anim="mask" [style.--pos]="b.img.pos">
+            <img [src]="b.img.src" [alt]="b.img.alt" [attr.data-slot]="'cat.' + b.slug" loading="lazy" data-parallax=".06" />
+          </div>
+        </div>
+        <div class="carte-intro">
+          <p class="eyebrow line" data-anim="fade">{{ 'Univers {n}' | tr: { n: b.num } }}</p>
+          <h2 class="h2" data-anim="up">{{ b.title }}</h2>
+          @if (b.intro) {<p class="lead" data-anim="up" style="--d: 0.15s">{{ b.intro }}</p>}
+          <div class="carte-cta" data-anim="up" style="--d: 0.25s">
+            <a class="btn btn-dark btn-shine" [href]="booking.url()" target="_blank" rel="noopener" (click)="booking.track(b.title)">{{ 'Réserver' | tr }} <app-arrow /></a>
+            @if (b.from) {<span class="carte-from">{{ b.from }}</span>}
+          </div>
+        </div>
+      </header>
+
+      <div class="carte-menu" [class.carte-short]="!b.right.length" data-anim="fade">
+        <div class="carte-col">
+          <ng-container *ngTemplateOutlet="menuCol; context: { $implicit: b.left }" />
+        </div>
+        @if (b.right.length) {
+          <div class="carte-col">
+            <ng-container *ngTemplateOutlet="menuCol; context: { $implicit: b.right }" />
+          </div>
+        }
+      </div>
+    </section>
+  }
+  <p class="carte-note" data-anim="fade">{{ 'Prix en dirhams, toutes taxes comprises (TVA 20 % incluse), susceptibles de modification. Résidents Amelkis III : 10 % de réduction sur les prestations.' | tr }}</p>
+</div>
+
+<section class="section partners">
+  <div class="container">
+    <div class="center values-head">
+      <p class="eyebrow center" data-anim="fade">{{ 'Nos marques partenaires' | tr }}</p>
+      <h2 class="h2" data-split>{{ 'Des experts au service de votre beauté' | tr }}</h2>
+    </div>
+    <div class="partner-grid">
+      @for (p of partners; track p.name; let i = $index) {
+        <article class="partner" data-anim="up" [style.--d]="(i * 0.1).toFixed(1) + 's'">
+          <div class="partner-logo"><img [src]="p.logo" [alt]="p.name" loading="lazy" [style.height.px]="p.h" /></div>
+          <p class="partner-cat">{{ p.cat | tr }}</p>
+          <p class="partner-text">{{ p.text | tr }}</p>
+          <div class="partner-links">
+            <a class="link-arrow" [routerLink]="('/blog/' + p.post) | lp">{{ 'Lire l’article' | tr }} <app-arrow /></a>
+            @if (p.url) {<a class="partner-site" [href]="p.url" target="_blank" rel="noopener">{{ 'Site officiel' | tr }} ↗</a>}
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+@if (brandPosts().length) {
+  <section class="section brand-blog">
+    <div class="container">
+      <div class="center values-head">
+        <p class="eyebrow center" data-anim="fade">{{ 'Le blog' | tr }}</p>
+        <h2 class="h2" data-split>{{ 'Nos marques, en détail' | tr }}</h2>
+        <p class="lead" data-anim="up" style="--d: 0.2s">{{ 'Pourquoi nous les avons choisies, et comment nous les utilisons dans vos soins.' | tr }}</p>
+      </div>
+      <div class="brand-posts">
+        @for (p of brandPosts(); track p.id; let i = $index) {
+          <article class="blog-card" data-anim="up" [style.--d]="(i * 0.1).toFixed(1) + 's'">
+            <a class="blog-card-img" [routerLink]="p.link" [attr.aria-label]="p.title">
+              <img [src]="p.cover" [alt]="p.cover_alt || p.title" loading="lazy" />
+            </a>
+            <div class="blog-card-body">
+              <p class="blog-meta"><span>{{ p.category }}</span> · {{ '{n} min de lecture' | tr: { n: p.reading_time } }}</p>
+              <h3><a [routerLink]="p.link">{{ p.title }}</a></h3>
+              <p>{{ p.excerpt }}</p>
+              <a class="link-arrow" [routerLink]="p.link">{{ 'Lire l’article' | tr }} <app-arrow /></a>
+            </div>
+          </article>
+        }
+      </div>
+      <div class="center brand-blog-all" data-anim="fade"><a class="btn btn-outline" [routerLink]="'/blog' | lp">{{ 'Tous les articles' | tr }} <app-arrow /></a></div>
+    </div>
+  </section>
+}
+
+<section class="section" style="background: var(--blanc)">
+  <div class="container">
+    <div class="center values-head">
+      <p class="eyebrow center" data-anim="fade">{{ 'Votre rituel' | tr }}</p>
+      <h2 class="h2" data-split>{{ 'Un moment pensé pour vous, en 4 étapes' | tr }}</h2>
+    </div>
+    <div class="steps">
+      <span class="line"></span>
+      @for (st of steps; track st.title; let i = $index) {
+        <div class="step" data-anim="up" [style.--i]="i">
+          <div class="step-num">0{{ i + 1 }}</div>
+          <h3>{{ st.title | tr }}</h3>
+          <p>{{ st.text | tr }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<app-cta />
+
+<ng-template #menuCol let-groups>
+  @for (g of groups; track $index) {
+    <div class="carte-grp" [class.cont]="g.cont">
+      @if (g.title) {<h3 class="carte-group">{{ g.title }}</h3>}
+      @for (it of g.items; track it.id) {
+        <div class="carte-item">
+          <div class="ci-line">
+            <h4>{{ it.name }}</h4>
+            <span class="ci-dots" aria-hidden="true"></span>
+            <span class="ci-prices">
+              @for (v of it.variants; track $index) {
+                <span class="ci-price">
+                  @if (v.duration) {<small class="ci-dur">{{ v.duration }}</small>}
+                  @if (v.prefix) {<small>{{ v.prefix }}</small>}
+                  <b [class.on-demand]="!v.currency">{{ v.amount }}</b>
+                  @if (v.currency) {<small class="ci-cur">{{ v.currency }}</small>}
+                </span>
+              }
+            </span>
+          </div>
+          @if (it.description) {<p>{{ it.description }}</p>}
+        </div>
+      }
+    </div>
+  }
+</ng-template>

@@ -1,0 +1,108 @@
+<section class="m-hero">
+  <div class="pan-bg" aria-hidden="true"></div>
+  <canvas class="sparkles" data-density=".8" aria-hidden="true"></canvas>
+  <div class="container">
+    <div>
+      <nav class="breadcrumb" data-anim="fade" [attr.aria-label]="'Fil d’Ariane' | tr"><a [routerLink]="'/' | lp">{{ 'Accueil' | tr }}</a><i></i><span>{{ 'Membership' | tr }}</span></nav>
+      <p class="eyebrow line" data-anim="fade" style="--d: 0.1s">{{ 'Membership' | tr }}</p>
+      <h1 data-split>{{ 'Rejoignez' | tr }}<br />{{ 'le club' | tr }} <em>OPAAL.</em></h1>
+      <p class="lead" data-anim="up" style="--d: 0.4s">{{ 'Profitez d’avantages exclusifs, de soins privilégiés et d’une expérience beauté sur-mesure, toute l’année.' | tr }}</p>
+      <div class="btn-row" data-anim="up" style="--d: 0.55s">
+        <a class="btn btn-dark btn-shine" [href]="booking.whatsapp('Bonjour OPAAL Beauty Club, je souhaite devenir membre du club OPAAL.' | tr)" target="_blank" rel="noopener" (click)="booking.track('Devenir membre', 'whatsapp')">{{ 'Devenir membre' | tr }} <app-arrow /></a>
+        <a class="link-arrow" [href]="('/membership' | lp) + '#avantages'">{{ 'Voir les avantages' | tr }} <app-arrow /></a>
+      </div>
+    </div>
+    <div class="member-card-wrap" data-anim="zoom" style="--d: 0.3s" aria-hidden="true"><div class="floaty"><app-member-card /></div></div>
+  </div>
+</section>
+
+<section class="section resident">
+  <div class="container resident-inner">
+    <div class="member-card-wrap" data-anim="zoom" aria-hidden="true"><div class="floaty"><app-resident-card /></div></div>
+    <div>
+      <p class="eyebrow line" data-anim="fade">{{ 'Résidents d’Amelkis III' | tr }}</p>
+      <h2 class="h2" data-split>{{ 'Votre carte noire,' | tr }}<br /><em>{{ '−10 % toute l’année.' | tr }}</em></h2>
+      <p class="lead" data-anim="up" style="--d: 0.2s">{{ 'Vous résidez à Amelkis III ? Profitez de 10 % de réduction sur toutes nos prestations (hors produits) : soins du visage, massages, coiffure, mains & pieds et épilation.' | tr }}</p>
+      <p data-anim="up" style="--d: 0.3s">{{ 'Demandez votre carte Résident lors de votre prochaine visite au salon.' | tr }}</p>
+      <div class="btn-row" data-anim="up" style="--d: 0.4s">
+        <a class="btn btn-dark btn-shine" [href]="booking.url()" target="_blank" rel="noopener" (click)="booking.track('Carte Résident')">{{ 'Réserver un soin' | tr }} <app-arrow /></a>
+        <a class="link-arrow" [routerLink]="'/soins' | lp">{{ 'Voir la carte & les tarifs' | tr }} <app-arrow /></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="avantages">
+  <div class="container">
+    <div class="center values-head">
+      <p class="eyebrow center" data-anim="fade">{{ 'Les avantages' | tr }}</p>
+      <h2 class="h2" data-split>{{ 'Être membre, c’est être privilégiée' | tr }}</h2>
+    </div>
+    <div class="benefits">
+      @for (b of benefits; track b.title; let i = $index) {
+        <article class="benefit" data-anim="up" [style.--d]="(i * 0.1).toFixed(1) + 's'">
+          <app-icon [name]="b.icon" />
+          <h3>{{ b.title | tr }}</h3>
+          <p>{{ b.text | tr }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+@if (content.formules().length) {
+  <section class="section" style="background: var(--blanc)">
+    <div class="container">
+      <div class="center values-head">
+        <p class="eyebrow center" data-anim="fade">{{ 'Les formules' | tr }}</p>
+        <h2 class="h2" data-split>{{ 'Des formules qui vous ressemblent' | tr }}</h2>
+        <p class="lead" data-anim="up" style="--d: 0.25s">{{ 'Choisissez la formule qui vous ressemble. Nous vous accompagnons pour trouver celle qui correspond à vos envies.' | tr }}</p>
+      </div>
+      <div class="tiers">
+        @for (f of content.formules(); track f.id; let i = $index) {
+          <article class="tier" [class.featured]="f.featured" data-anim="up" [style.--d]="(i * 0.14).toFixed(2) + 's'">
+            @if (f.badge) {<span class="badge">{{ f.badge }}</span>}
+            <app-mono />
+            <h3>{{ f.title }}</h3>
+            <p class="sub">{{ f.subtitle }}</p>
+            @if (f.description) {<p class="tier-desc">{{ f.description }}</p>}
+            <ul>
+              @for (p of f.perks; track $index) {<li>{{ p }}</li>}
+            </ul>
+            <p class="price">{{ f.price || ('Tarif sur demande' | tr) }}</p>
+            <a class="btn btn-outline" [href]="booking.whatsapp('Bonjour OPAAL Beauty Club, je suis intéressée par la formule {name} du club OPAAL.' | tr: { name: f.title })" target="_blank" rel="noopener" (click)="booking.track('Formule ' + f.title, 'whatsapp')">{{ 'Je suis intéressée' | tr }} <app-arrow /></a>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+}
+
+<section class="section">
+  <div class="container">
+    <div class="center values-head">
+      <p class="eyebrow center" data-anim="fade">{{ 'Comment ça marche' | tr }}</p>
+      <h2 class="h2" data-split>{{ 'Rejoindre le club en 3 étapes' | tr }}</h2>
+    </div>
+    <div class="steps three">
+      <span class="line"></span>
+      @for (st of steps; track st.title; let i = $index) {
+        <div class="step" data-anim="up" [style.--i]="i">
+          <div class="step-num">0{{ i + 1 }}</div>
+          <h3>{{ st.title | tr }}</h3>
+          <p>{{ st.text | tr }}</p>
+        </div>
+      }
+    </div>
+    <div class="faq">
+      @for (f of faqs; track f.q; let i = $index) {
+        <div class="faq-item" [class.open]="openFaq() === i" data-anim="up">
+          <button type="button" class="faq-q" [attr.aria-expanded]="openFaq() === i" (click)="toggle(i)">{{ f.q | tr }}<i aria-hidden="true"></i></button>
+          <div class="faq-a"><div><p>{{ f.a | tr }}</p></div></div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<app-cta />

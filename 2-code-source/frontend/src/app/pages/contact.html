@@ -1,0 +1,77 @@
+<app-page-hero crumb="Contact" eyebrow="Contact"
+  lead="Une question, une envie de soin ? Écrivez-nous ou réservez directement votre moment : nous vous répondons avec plaisir."
+  slot="contact.hero" ghost="Contact" badge="Amelkis<br>Marrakech">
+  <h1 data-split>{{ 'Prenons soin' | tr }}<br />{{ 'de' | tr }} <em>{{ 'vous.' | tr }}</em></h1>
+  <div actions>
+    <a class="btn btn-dark btn-shine" [href]="booking.url()" target="_blank" rel="noopener" (click)="booking.track('Page Contact')">{{ 'Réserver un soin' | tr }} <app-arrow /></a>
+    <a class="link-arrow" [href]="wa()" target="_blank" rel="noopener">{{ 'Écrire sur WhatsApp' | tr }} <app-arrow /></a>
+  </div>
+</app-page-hero>
+
+<section class="section">
+  <div class="container contact-grid">
+    <div class="contact-left">
+      <p class="eyebrow line" data-anim="fade">{{ 'Nous trouver' | tr }}</p>
+      <h2 class="h2" data-split>{{ 'Nos coordonnées' | tr }}</h2>
+      <address class="info-cards">
+        <div class="info-card" data-anim="left" style="--d: 0s">
+          <app-icon name="phone" />
+          <div><b>{{ 'Téléphone' | tr }}</b><a [href]="tel()">{{ s().phone }}</a></div>
+        </div>
+        <div class="info-card" data-anim="left" style="--d: 0.1s">
+          <app-icon name="chat" />
+          <div><b>WhatsApp</b><a [href]="wa()" target="_blank" rel="noopener">{{ 'Écrire sur WhatsApp' | tr }}</a></div>
+        </div>
+        <div class="info-card" data-anim="left" style="--d: 0.2s">
+          <app-icon name="mail" />
+          <div><b>{{ 'E-mail' | tr }}</b><a [href]="'mailto:' + s().email">{{ s().email }}</a></div>
+        </div>
+        <div class="info-card" data-anim="left" style="--d: 0.3s">
+          <app-icon name="pin" />
+          <div>
+            <b>{{ 'Adresse' | tr }}</b>
+            <span>{{ s().address_line1 }}<br />{{ s().address_line2 }}<br />{{ s().city }}, {{ s().country }}</span>
+            @if (s().access_note) {<span class="access-note">{{ s().access_note }}</span>}
+            <a class="small-link" [href]="s().maps_url" target="_blank" rel="noopener">{{ 'Itinéraire Google Maps' | tr }}</a>
+          </div>
+        </div>
+        <div class="info-card" data-anim="left" style="--d: 0.4s">
+          <app-icon name="clock" />
+          <div>
+            <b>{{ 'Horaires' | tr }}</b>
+            @if (s().hours.length) {
+              <ul class="hours">
+                @for (h of s().hours; track $index) {<li><span>{{ h.days }}</span><span>{{ h.time }}</span></li>}
+              </ul>
+            } @else {
+              <span>{{ 'Sur rendez-vous — appelez-nous ou écrivez-nous.' | tr }}</span>
+            }
+          </div>
+        </div>
+      </address>
+      @if (socials().length) {
+        <div class="socials" data-anim="fade">
+          @for (so of socials(); track so.label) {<a [href]="so.url" target="_blank" rel="noopener">{{ so.label }}</a>}
+        </div>
+      }
+    </div>
+    <div class="panel" id="formulaire" data-anim="right">
+      <p class="eyebrow">{{ 'Écrivez-nous' | tr }}</p>
+      <h2>{{ 'Envoyer un message' | tr }}</h2>
+      <p class="lead-sm">{{ 'Pour prendre rendez-vous, choisissez directement votre créneau sur' | tr }} <a class="inline-link" [href]="booking.url()" target="_blank" rel="noopener" (click)="booking.track('Page Contact (texte)')">{{ 'notre agenda en ligne' | tr }}</a>.</p>
+      <div style="height: 22px"></div>
+      <app-contact-form />
+    </div>
+  </div>
+</section>
+
+<section class="map-section" data-anim="fade">
+  <iframe [src]="map()" [title]="'Plan d’accès OPAAL Beauty Club — Amelkis, Marrakech' | tr" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <div class="map-card">
+    <p class="eyebrow">{{ 'Plan d’accès' | tr }}</p>
+    <h3>{{ s().address_line1 }}</h3>
+    <p>{{ s().address_line2 }}, {{ s().city }}</p>
+    @if (s().access_note) {<p class="access-note">{{ s().access_note }}</p>}
+    <a class="btn btn-dark btn-sm" [href]="s().maps_url" target="_blank" rel="noopener">{{ 'Itinéraire' | tr }} <app-arrow /></a>
+  </div>
+</section>

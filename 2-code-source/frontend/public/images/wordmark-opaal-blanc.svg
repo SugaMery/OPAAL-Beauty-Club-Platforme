@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-4 -2 464 104" role="img" aria-label="OPAAL Beauty Club">
+  <line x1="215.3" y1="66" x2="352.7" y2="66" stroke="#C8A95D" stroke-width="4.42"/>
+  <g fill="none" stroke="#FFFFFF" stroke-width="3.4" stroke-linejoin="miter" stroke-miterlimit="12">
+    <ellipse cx="46" cy="50" rx="44" ry="48.3"/>
+    <path d="M122 100V1.7H148A25.8 25.8 0 0 1 148 53.3H122"/>
+    <polyline points="198,100 248,2 298,100"/>
+    <polyline points="270,100 320,2 370,100"/>
+    <path d="M404 1.7V98.3H455"/>
+  </g>
+</svg>

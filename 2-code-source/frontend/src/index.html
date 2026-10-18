@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>OPAAL Beauty Club — Spa, coiffeur et institut de beauté à Marrakech</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F7F3EE">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <script>
+    (function () {
+      var h = document.documentElement;
+      h.classList.add('js');
+      if (location.pathname.indexOf('/admin') === 0) h.classList.add('no-intro');
+      // Sécurité : si l'application ne démarre pas, le contenu reste visible
+      setTimeout(function () { if (!window.__opaalBooted) h.classList.remove('js'); }, 6000);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <svg class="mono" viewBox="572 672 786 576"><line class="bar" pathLength="1" x1="662" y1="1078" x2="1269" y2="1078" stroke="#C8A95D" stroke-width="22"/><g fill="none" stroke="currentColor" stroke-width="24" stroke-miterlimit="10"><polyline pathLength="1" points="584.2,1280 810,716 1036.3,1280"/><polyline pathLength="1" points="894.7,1280 1121,716 1346.8,1280"/></g></svg>
+      <svg class="wordmark" viewBox="-4 -2 464 104"><line class="bar" x1="215.3" y1="66" x2="352.7" y2="66" stroke="#C8A95D" stroke-width="4.4"/><g fill="none" stroke="currentColor" stroke-width="3.4" stroke-miterlimit="12"><ellipse cx="46" cy="50" rx="44" ry="48.3"/><path d="M122 100V1.7H148A25.8 25.8 0 0 1 148 53.3H122"/><polyline points="198,100 248,2 298,100"/><polyline points="270,100 320,2 370,100"/><path d="M404 1.7V98.3H455"/></g></svg>
+      <span class="tag">Beauty Club</span>
+      <span class="bar-line"><i></i></span>
+    </div>
+  </div>
+  <app-root></app-root>
+  <noscript><p style="padding:24px;text-align:center">Pour réserver / To book: +212 6 48 41 00 70 — mail@opaalbeautyclub.com</p></noscript>
+</body>
+</html>

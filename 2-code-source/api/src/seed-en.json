@@ -1,0 +1,281 @@
+{
+  "settings": {
+    "country_en": "Morocco",
+    "languages": [
+      "fr",
+      "en"
+    ]
+  },
+  "categories": {
+    "visage": {
+      "title": [
+        "Soins visage",
+        "Facials"
+      ],
+      "intro": [
+        "Des soins haute performance pour une peau éclatante, saine et durable, choisis selon votre type de peau.",
+        "High-performance treatments for radiant, healthy, lasting skin, chosen for your skin type."
+      ]
+    },
+    "regard": {
+      "title": [
+        "Beauté du regard",
+        "Brows & lashes"
+      ],
+      "intro": [
+        "Sublimez votre regard et révélez la beauté naturelle de votre visage.",
+        "Enhance your gaze and reveal the natural beauty of your face."
+      ]
+    },
+    "corps": {
+      "title": [
+        "Soins corps",
+        "Body treatments"
+      ],
+      "intro": [
+        "Détente et régénération : des soins qui apaisent le corps autant que l'esprit.",
+        "Relaxation and renewal: treatments that soothe the body as much as the mind."
+      ]
+    },
+    "cheveux": {
+      "title": [
+        "Coiffure",
+        "Hair"
+      ],
+      "intro": [
+        "Couleur, soin et mise en beauté : des cheveux sublimés, du shampoing au brushing.",
+        "Colour, care and styling: beautiful hair, from shampoo to blow-dry."
+      ]
+    },
+    "ongles": {
+      "title": [
+        "Onglerie",
+        "Nails"
+      ],
+      "intro": [
+        "Élégance jusqu'au bout des ongles, avec des gestes précis et soignés.",
+        "Elegance to your fingertips, with precise and careful technique."
+      ]
+    }
+  },
+  "services": {
+    "Soin hydratant": [
+      "Hydrating facial",
+      "Pour une peau souple, repulpée et confortable.",
+      "For supple, plumped and comfortable skin."
+    ],
+    "Soin éclat": [
+      "Radiance facial",
+      "Un coup de lumière pour un teint frais et lumineux.",
+      "A burst of light for a fresh, luminous complexion."
+    ],
+    "Soin purifiant": [
+      "Purifying facial",
+      "Pour assainir la peau et affiner le grain.",
+      "To clarify the skin and refine its texture."
+    ],
+    "Soin anti-âge": [
+      "Anti-ageing facial",
+      "Pour lisser, raffermir et redensifier.",
+      "To smooth, firm and restore density."
+    ],
+    "Massage facial au gua sha": [
+      "Gua sha facial massage",
+      "Un geste drainant et liftant, pour un visage reposé.",
+      "A draining, lifting ritual for a well-rested face."
+    ],
+    "Rehaussement de cils": [
+      "Lash lift",
+      "Des cils recourbés et sublimés, naturellement.",
+      "Curled, beautifully enhanced lashes, naturally."
+    ],
+    "Teinture cils & sourcils": [
+      "Lash & brow tint",
+      "Pour intensifier le regard en douceur.",
+      "To gently intensify your gaze."
+    ],
+    "Restructuration des sourcils": [
+      "Brow shaping",
+      "Une ligne harmonieuse, adaptée à votre visage.",
+      "A harmonious line, tailored to your face."
+    ],
+    "Extensions de cils": [
+      "Lash extensions",
+      "Un regard intense, du plus naturel au plus glamour.",
+      "An intense look, from the most natural to the most glamorous."
+    ],
+    "Massage relaxant": [
+      "Relaxing massage",
+      "Pour relâcher les tensions et apaiser l'esprit.",
+      "To release tension and calm the mind."
+    ],
+    "Gommage corps": [
+      "Body scrub",
+      "Une peau douce, lisse et lumineuse.",
+      "Soft, smooth and glowing skin."
+    ],
+    "Enveloppement": [
+      "Body wrap",
+      "Pour nourrir la peau en profondeur.",
+      "To deeply nourish the skin."
+    ],
+    "Rituel bien-être": [
+      "Wellbeing ritual",
+      "Un moment complet pour se reconnecter à soi.",
+      "A complete moment to reconnect with yourself."
+    ],
+    "Shampoing & massage crânien": [
+      "Shampoo & scalp massage",
+      "Un moment de détente, du cuir chevelu aux pointes.",
+      "A relaxing moment, from scalp to ends."
+    ],
+    "Soin profond des cheveux": [
+      "Deep hair treatment",
+      "Pour nourrir, réparer et faire briller.",
+      "To nourish, repair and add shine."
+    ],
+    "Coloration & balayage": [
+      "Colour & balayage",
+      "Une couleur lumineuse et naturelle, sur-mesure.",
+      "Luminous, natural, made-to-measure colour."
+    ],
+    "Coupe & brushing": [
+      "Cut & blow-dry",
+      "Une coupe qui vous ressemble, un coiffage impeccable.",
+      "A cut that suits you, flawless styling."
+    ],
+    "Manucure": [
+      "Manicure",
+      "Des mains soignées et élégantes.",
+      "Well-groomed, elegant hands."
+    ],
+    "Vernis semi-permanent": [
+      "Gel polish",
+      "Une couleur éclatante qui dure.",
+      "Vibrant colour that lasts."
+    ],
+    "Nail art": [
+      "Nail art",
+      "Des motifs délicats, du plus discret au plus audacieux.",
+      "Delicate designs, from the most subtle to the boldest."
+    ],
+    "Pédicure": [
+      "Pedicure",
+      "Des pieds doux et parfaitement soignés.",
+      "Soft, perfectly cared-for feet."
+    ],
+    "Soin des mains": [
+      "Hand treatment",
+      "Un moment de douceur pour vos mains.",
+      "A gentle moment for your hands."
+    ]
+  },
+  "offers": {
+    "Éclat": {
+      "title_en": "Éclat",
+      "subtitle": [
+        "L'essentiel du club",
+        "The club essentials"
+      ],
+      "perks": [
+        [
+          "Accès aux avantages membres",
+          "Réservation prioritaire",
+          "Suivi de votre peau"
+        ],
+        [
+          "Access to member perks",
+          "Priority booking",
+          "Ongoing skin follow-up"
+        ]
+      ],
+      "badge_en": ""
+    },
+    "Opale": {
+      "title_en": "Opale",
+      "subtitle": [
+        "L'équilibre parfait",
+        "The perfect balance"
+      ],
+      "perks": [
+        [
+          "Tous les avantages Éclat",
+          "Soins privilégiés toute l'année",
+          "Conseils personnalisés"
+        ],
+        [
+          "All Éclat benefits",
+          "Privileged treatments all year round",
+          "Personalised advice"
+        ]
+      ],
+      "badge_en": "Signature"
+    },
+    "Prestige": {
+      "title_en": "Prestige",
+      "subtitle": [
+        "L'expérience ultime",
+        "The ultimate experience"
+      ],
+      "perks": [
+        [
+          "Tous les avantages Opale",
+          "Rituels sur-mesure",
+          "Attentions exclusives"
+        ],
+        [
+          "All Opale benefits",
+          "Bespoke rituals",
+          "Exclusive treats"
+        ]
+      ],
+      "badge_en": ""
+    },
+    "Offre de bienvenue": {
+      "title_en": "Welcome offer",
+      "subtitle": [
+        "Offre du moment",
+        "Current offer"
+      ],
+      "description": [
+        "Exemple d'offre : activez-la et personnalisez-la depuis l'espace propriétaire.",
+        "Sample offer: activate and customise it from the owner area."
+      ],
+      "badge_en": "New"
+    }
+  },
+  "posts": {
+    "soin-visage-choisir-selon-type-de-peau": {
+      "title": [
+        "Soin du visage : comment choisir celui qui convient à votre peau ?",
+        "Facials: how to choose the right one for your skin"
+      ],
+      "excerpt_en": "Dry, combination, oily or mature: every skin type has its own needs. Here is how to choose the facial that will truly do you good.",
+      "category_en": "Face",
+      "cover_alt_en": "Gua sha facial at OPAAL Beauty Club in Marrakech",
+      "seo_title_en": "Which facial should you choose for your skin? | OPAAL Marrakech",
+      "seo_description_en": "Dry, combination, oily or mature skin: our advice for choosing the right facial in Marrakech, whether hydrating, radiance, purifying or anti-ageing.",
+      "content_en": "A successful facial always starts with a simple question: what does your skin need today? Between the Marrakech sun, the dry air and the pace of everyday life, it changes with the seasons. Here are our guidelines to help you make the right choice.\n\n## Dry or tight skin: focus on hydration\nSkin that feels tight after cleansing, shows lines quickly or looks dull lacks water and lipids. A **hydrating facial** restores suppleness and comfort: the skin is plumped and the complexion more even.\n\n## Dull or tired complexion: the radiance facial\nLack of sleep, stress, pollution… When your complexion loses its glow, a **radiance facial** brings a real boost of freshness. Combined with a massage, it stimulates microcirculation for a visibly rested face.\n\n## Combination to oily skin: the purifying facial\nShine, enlarged pores, small blemishes: the skin needs to be cleansed without being stripped. The **purifying facial** deeply cleanses and refines the skin texture while respecting its balance.\n\n## Mature skin: the anti-ageing facial\nOver time, the skin loses firmness and density. The **anti-ageing facial** smooths, firms and restores density for a more toned face.\n\n## And what about gua sha?\nThe **gua sha facial massage** suits all skin types. Draining and lifting, it decongests the face and enhances any treatment.\n\n## Our tips to make the benefits last\n- Cleanse your skin morning and evening, even without make-up\n- Apply a cream suited to your skin type every day\n- Protect yourself from the sun all year round, even in winter in Marrakech\n- Treat yourself to a salon facial regularly to keep your skin glowing\n\nNot sure? During your appointment, we take the time to analyse your skin and recommend the ideal treatment. Discover [our facials](/en/soins#visage) and book your moment at OPAAL Beauty Club, in Amelkis."
+    },
+    "soin-peau-soleil-marrakech": {
+      "title": [
+        "Soleil de Marrakech : 7 conseils pour protéger et sublimer votre peau",
+        "Marrakech sun: 7 tips to protect and enhance your skin"
+      ],
+      "excerpt_en": "Heat, generous sunshine, dry air: the Marrakech climate puts skin to the test. Our 7 tips to protect it and keep a radiant complexion.",
+      "category_en": "Beauty tips",
+      "cover_alt_en": "Fresh, luminous skin after a facial",
+      "seo_title_en": "Marrakech sun: 7 tips for your skin | OPAAL",
+      "seo_description_en": "Heat, sun and dry air: our beauty therapists’ 7 tips to protect your skin in Marrakech and keep a radiant complexion all year round.",
+      "content_en": "In Marrakech, the sun shines more than 300 days a year. A real joy… as long as you protect your skin properly. Heat, UV rays and dry air can dehydrate it, mark it and dull your complexion. Here are our 7 habits to care for it all year round.\n\n## 1. Sun protection, every day\nEven in winter and even on hazy days, apply a high-SPF product to your face, neck and décolleté every morning. Reapply if you spend a long time outdoors.\n\n## 2. Hydrate from within\nDrink regularly throughout the day, without waiting until you are thirsty. Skin that is well hydrated from within stays more supple and luminous.\n\n## 3. Choose light textures\nDuring the hot months, opt for serums, gels and fluid creams: they hydrate without weighing the skin down.\n\n## 4. Cleanse gently\nSweat and dust clog the pores. Cleanse your skin morning and evening with a gentle product that does not dry it out.\n\n## 5. Soothe after sun exposure\nAfter a day in the sun, reach for a soothing, hydrating treatment to calm any heat.\n\n## 6. Don’t forget your lips and hands\nThese delicate areas are often forgotten: a protective lip balm and a hand cream make all the difference.\n\n## 7. Treat your skin to a salon facial\nAfter the summer, a **hydrating facial** or a **radiance facial** helps the skin regain comfort and glow. It is also the perfect time to review its needs with a professional.\n\nYour skin deserves the best: discover [our facials](/en/soins#visage) and book your moment of pampering at OPAAL Beauty Club, in Amelkis, Marrakech."
+    }
+  },
+  "campaigns": {
+    "L’automne chez OPAAL : offrez un nouvel éclat à votre peau ✨": {
+      "subject_en": "Autumn at OPAAL: give your skin a new glow ✨",
+      "heading_en": "Hello {prenom}!",
+      "body_en": "After summer in Marrakech, your skin needs some tenderness. It is the ideal time to restore its comfort, suppleness and glow.\n\n## Our back-to-routine treatments\n- **Hydrating facial**: for supple, plumped and comfortable skin\n- **Radiance facial**: a burst of light for a fresh, luminous complexion\n- **Gua sha facial massage**: draining and lifting, for a well-rested face\n\n![Facial at OPAAL Beauty Club in Marrakech](images/soin-visage-fresh.jpg)\n\n## Your opinion matters\nHave you already visited OPAAL? Share your experience: your review helps other clients discover us and helps us improve.\n\nBook your moment in a few clicks on our online booking page, or message us on WhatsApp.\n\nSee you very soon,\nThe OPAAL team",
+      "button_label_en": "Book my treatment"
+    }
+  }
+}

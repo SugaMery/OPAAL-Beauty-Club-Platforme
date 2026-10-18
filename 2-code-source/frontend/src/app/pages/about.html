@@ -1,0 +1,112 @@
+<app-page-hero crumb="À propos" eyebrow="Notre histoire"
+  lead="Plus qu’un institut, une expérience : un lieu où l’on prend le temps de vous écouter, de vous chouchouter et de révéler votre lumière."
+  slot="about.hero" ghost="Opaal" badge="Beauté · Confiance<br>Excellence">
+  <h1 data-split>{{ 'La beauté comme' | tr }}<br /><em>{{ 'philosophie' | tr }}</em> {{ 'de vie.' | tr }}</h1>
+  <div actions>
+    <a class="btn btn-dark btn-shine" [routerLink]="'/soins' | lp">{{ 'Découvrir nos soins' | tr }} <app-arrow /></a>
+    <a class="link-arrow" [href]="booking.url()" target="_blank" rel="noopener" (click)="booking.track('Page À propos')">{{ 'Réserver' | tr }} <app-arrow /></a>
+  </div>
+</app-page-hero>
+
+<section class="story">
+  <div class="about-marble">
+    <div class="about-logo draw">
+      <app-wordmark />
+      <span class="tagline" data-anim="fade" style="--d: 1s">Beauty Club</span>
+      <i class="dash" data-anim="fade" style="--d: 1.2s"></i>
+    </div>
+  </div>
+  <div class="about-text">
+    <p class="eyebrow line" data-anim="fade">{{ 'Notre philosophie' | tr }}</p>
+    <h2 class="h2" data-split>{{ 'Plus qu’un institut,' | tr }}<br />{{ 'une expérience.' | tr }}</h2>
+    <p data-anim="up" style="--d: 0.3s">
+      {{ 'Chez OPAAL Beauty Club, nous croyons en une beauté authentique, intemporelle et durable. Notre mission est de vous offrir une expérience unique, alliant soin, expertise et bien-être, dans un cadre raffiné et apaisant.' | tr }}
+    </p>
+    <p data-anim="up" style="--d: 0.4s">
+      {{ 'Spa, massages, soins du visage et du corps, coiffure : chaque soin est pensé pour que vous vous sentiez accueillie, écoutée et sublimée, au cœur d’Amelkis, à Marrakech.' | tr }}
+    </p>
+  </div>
+</section>
+
+<section class="big-quote">
+  <div class="container">
+    <p class="eyebrow center" data-anim="fade">{{ 'Notre promesse' | tr }}</p>
+    <p data-highlight>{{ 'L’art de révéler la' | tr }} <em>{{ 'lumière' | tr }}</em> {{ 'qui est en vous.' | tr }}</p>
+  </div>
+</section>
+
+<section class="section" style="padding-bottom: 0">
+  <div class="container">
+    <div class="center values-head">
+      <p class="eyebrow center" data-anim="fade">{{ 'Nos valeurs' | tr }}</p>
+      <h2 class="h2" data-split>{{ 'Beauté — Confiance — Excellence' | tr }}</h2>
+    </div>
+  </div>
+  <div class="container">
+    <div class="values">
+      @for (v of values; track v.title; let i = $index) {
+        <div class="value" data-anim="up" [style.--d]="(i * 0.14).toFixed(2) + 's'">
+          <div class="num">0{{ i + 1 }}</div>
+          <h3>{{ v.title | tr }}</h3>
+          <p>{{ v.text | tr }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container mono-section">
+    <div class="mono-big" data-anim="zoom"><div class="draw" style="width: 58%; --dd: 0.4s"><app-mono /></div></div>
+    <div>
+      <p class="eyebrow line" data-anim="fade">{{ 'Le monogramme' | tr }}</p>
+      <h2 class="h2" data-split>{{ 'Symbole d’équilibre, d’union et d’excellence.' | tr }}</h2>
+      <p class="lead" data-anim="up" style="--d: 0.25s">
+        {{ 'Deux A qui s’entrelacent, reliés par un trait doré : le monogramme OPAAL incarne la rencontre entre votre beauté naturelle et notre savoir-faire.' | tr }}
+      </p>
+      <div class="elements" data-stagger=".12" data-stagger-base=".3">
+        <div class="element" data-anim="up">
+          <svg class="draw" viewBox="0 0 70 70" aria-hidden="true"><circle pathLength="1" cx="35" cy="35" r="30" /><line pathLength="1" class="g" x1="18" y1="35" x2="52" y2="35" /></svg>
+          <span>{{ 'Équilibre' | tr }}</span>
+        </div>
+        <div class="element" data-anim="up">
+          <svg class="draw" viewBox="0 0 70 70" aria-hidden="true"><polyline pathLength="1" points="12,62 26,10 40,62" /><polyline pathLength="1" points="30,62 44,10 58,62" /><line pathLength="1" class="g" x1="17" y1="44" x2="53" y2="44" /></svg>
+          <span>{{ 'Union' | tr }}</span>
+        </div>
+        <div class="element" data-anim="up">
+          <svg class="draw" viewBox="0 0 70 70" aria-hidden="true"><circle class="fill" cx="35" cy="35" r="4" /><path pathLength="1" class="g" d="M35 26V3M35 44v23M26 35H3M44 35h23M28.6 28.6 13 13M41.4 41.4 57 57M41.4 28.6 57 13M28.6 41.4 13 57" /><path pathLength="1" class="g" d="M31.6 26.7 27.3 16.5M38.4 43.3 42.7 53.5M26.7 38.4 16.5 42.7M43.3 31.6 53.5 27.3M38.4 26.7 42.7 16.5M31.6 43.3 27.3 53.5M26.7 31.6 16.5 27.3M43.3 38.4 53.5 42.7" /></svg>
+          <span>{{ 'Éclat' | tr }}</span>
+        </div>
+        <div class="element" data-anim="up">
+          <svg class="draw" viewBox="0 0 70 70" aria-hidden="true"><path pathLength="1" d="M23 66V20a12 12 0 0 1 24 0v46Z" /><path pathLength="1" class="g" d="M27 62V21a8 8 0 0 1 16 0v41Z" /><circle class="fill" cx="39" cy="57" r="1.6" /></svg>
+          <span>{{ 'Élégance' | tr }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section lieu" style="background: var(--blanc)">
+  <div class="container lieu-inner">
+    <div class="lieu-media" data-anim="fade">
+      <div class="arch-line"></div>
+      <div class="lieu-frame" data-anim="mask" style="--d: 0.15s">
+        <img [src]="lieu().src" [alt]="lieu().alt" data-slot="about.lieu" loading="lazy" width="1320" height="1643" data-parallax=".06" [style.object-position]="lieu().pos" />
+      </div>
+      <span class="lieu-caption" data-anim="up" style="--d: 0.6s"><app-mono />{{ 'Club House · Amelkis 3' | tr }}</span>
+    </div>
+    <div class="lieu-text">
+      <p class="eyebrow line" data-anim="fade">{{ 'Le lieu' | tr }}</p>
+      <h2 class="h2" data-split>{{ 'Un écrin de calme,' | tr }}<br /><em>{{ 'au cœur d’Amelkis 3' | tr }}</em></h2>
+      <p class="lead" data-anim="up" style="--d: 0.2s">{{ 'Au sein de l’enceinte Emaar, OPAAL Beauty Club vous accueille au Club House d’Amelkis 3, face aux fairways. Ici, le temps ralentit : le calme du golf, la verdure et l’élégance du lieu font de chaque soin un véritable moment de pause.' | tr }}</p>
+      <p data-anim="up" style="--d: 0.3s">{{ 'Après un parcours, une journée à Marrakech ou simplement pour vous ressourcer, venez profiter de nos soins du visage, massages et prestations de coiffure.' | tr }}</p>
+      <p class="lieu-access" data-anim="up" style="--d: 0.4s"><b>{{ 'Accès ouvert à toutes' | tr }}</b>{{ 'Indiquez simplement au poste de garde que vous venez chez OPAAL Beauty Club.' | tr }}</p>
+      <div class="btn-row" data-anim="up" style="--d: 0.5s">
+        <a class="btn btn-dark btn-shine" [href]="booking.url()" target="_blank" rel="noopener" (click)="booking.track('À propos — le lieu')">{{ 'Réserver un soin' | tr }} <app-arrow /></a>
+        <a class="link-arrow" [href]="content.settings().maps_url" target="_blank" rel="noopener">{{ 'Itinéraire' | tr }} <app-arrow /></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-cta />

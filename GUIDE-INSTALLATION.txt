@@ -1,0 +1,286 @@
+=====================================================================
+  OPAAL BEAUTY CLUB — SITE ANGULAR + ESPACE PROPRIÉTAIRE
+  Guide d'installation et d'utilisation
+=====================================================================
+
+CONTENU DU DOSSIER
+------------------
+1-site-pret-a-mettre-en-ligne/
+    Le site complet, déjà compilé, à envoyer tel quel sur votre
+    hébergement. (Le dossier 3-site-a-publier et l'archive
+    opaal-site-a-publier.zip contiennent exactement la même version.)
+    Il contient :
+      - les pages du site en français (/soins…) et en anglais
+        (/en/soins…), pré-rendues pour Google
+      - l'espace propriétaire (adresse /admin)
+      - le dossier api/ : le serveur PHP qui enregistre les réservations,
+        messages, avis, tarifs, offres et coordonnées, et qui envoie
+        les e-mails via votre boîte IONOS (contact@opaalbeauty.com)
+
+2-code-source/
+    Le code source, pour un développeur :
+      - frontend/ : le projet Angular 22
+      - api/      : le serveur PHP (config.example.php sans mot de passe)
+
+
+=====================================================================
+  1. METTRE LE SITE EN LIGNE SUR IONOS
+=====================================================================
+
+Prérequis : un hébergement web IONOS avec PHP 8.1 ou plus récent
+(par défaut chez IONOS). Aucune base MySQL n'est nécessaire : les données
+sont enregistrées dans un fichier créé automatiquement.
+
+Étape 1 — Version de PHP
+    IONOS > Hébergement > PHP : choisissez PHP 8.2, 8.3 ou 8.4.
+
+Étape 2 — Envoyer les fichiers
+    Avec le Gestionnaire de fichiers IONOS (Webspace Explorer) ou un
+    logiciel SFTP (FileZilla…), envoyez TOUT le contenu du dossier
+    « 1-site-pret-a-mettre-en-ligne » à la racine de votre site.
+    Important : envoyez aussi les fichiers cachés « .htaccess » :
+    à la racine, dans en/, uploads/, api/, api/data/ et api/src/.
+    Dans FileZilla : menu Serveur > Forcer l'affichage des fichiers cachés.
+    Lors d'une mise à jour, n'écrasez jamais api/config.php, le dossier
+    api/data (la base de données) ni vos photos dans uploads/.
+
+Étape 3 — Domaine et HTTPS
+    IONOS > Domaines : vérifiez que opaalbeauty.com pointe vers ce
+    dossier et que le certificat SSL est actif (https).
+
+Étape 4 — Droits d'écriture
+    Le dossier api/data doit être accessible en écriture
+    (droits 755, ou 775 si nécessaire). C'est là qu'est créée la base
+    de données au premier passage.
+
+Étape 5 — Première connexion
+    Ouvrez https://opaalbeauty.com/admin
+      Identifiant  : contact@opaalbeauty.com
+      Mot de passe : celui indiqué dans api/config.php
+                     (ligne 'admin_initial_password')
+    Allez tout de suite dans « Mon compte » pour choisir votre propre
+    mot de passe.
+
+Étape 6 — Tester les e-mails
+    Tableau de bord > « Envoyer un e-mail de test ».
+    Vous devez le recevoir dans contact@opaalbeauty.com.
+
+Étape 7 — Google
+    Dans Google Search Console, ajoutez opaalbeauty.com et envoyez le
+    plan du site : https://opaalbeauty.com/sitemap.xml
+    Pensez aussi à créer / relier votre fiche Google Business Profile
+    (même adresse et même téléphone que sur le site).
+
+
+=====================================================================
+  2. SÉCURITÉ — À FAIRE ABSOLUMENT
+=====================================================================
+
+  • Le mot de passe de la boîte contact@opaalbeauty.com a été écrit
+    dans une conversation. Par prudence, changez-le dans IONOS
+    (Messagerie > contact@opaalbeauty.com > Mot de passe), puis
+    remplacez-le dans api/config.php, ligne 'password', et renvoyez
+    ce seul fichier sur le serveur.
+
+  • Ne partagez jamais le fichier api/config.php (il contient ce mot de
+    passe). Il est protégé : personne ne peut l'ouvrir depuis Internet.
+
+  • Changez le mot de passe de l'espace propriétaire à la première
+    connexion. En cas d'oubli : « Mot de passe oublié ? » sur l'écran
+    de connexion (un lien est envoyé à contact@opaalbeauty.com).
+
+
+=====================================================================
+  3. L'ESPACE PROPRIÉTAIRE (opaalbeauty.com/admin)
+=====================================================================
+
+  Tableau de bord   Clics sur « Réserver » (14 jours + soins les plus
+                    cliqués), messages, abonnées, liste « À faire »,
+                    historique des e-mails envoyés.
+  Réservations      Les boutons « Réserver » ouvrent l'agenda en ligne
+                    Dikidi (https://dikidi.net/1891924), modifiable dans
+                    « Coordonnées & réservation ». « Devenir membre »
+                    ouvre WhatsApp avec un message pré-rempli.
+  Messages          Les messages du formulaire de contact.
+  Avis clientes     Les avis laissés sur le site n'apparaissent qu'après
+                    votre validation (« Publier »). Vous pouvez aussi
+                    ajouter vous-même un avis reçu ailleurs (Google,
+                    Instagram…).
+  Soins & tarifs    Nom, description, prix (vide = « Sur demande »),
+                    « à partir de », durée, visible ou masqué, ajout et
+                    suppression de soins. La page Soins se met à jour
+                    immédiatement.
+  Offres & formules Les formules du club (page Membership) et les offres
+                    du moment (bandeau sur l'accueil).
+  Images du site    Photo de chaque section (accueil, cartes, page Soins,
+                    en-têtes), galerie, publications de l'accueil et
+                    médiathèque : envoi, remplacement, suppression, cadrage,
+                    texte alternatif. Les photos sont rangées dans /uploads.
+  Blog              Articles (conseils beauté) avec image, titre et
+                    description Google. Chaque article publié devient une
+                    page du site et entre dans le plan du site (sitemap).
+                    3 articles sont prêts en brouillon.
+  Newsletter        Abonnées (inscription depuis le pied de page du site,
+                    import d'une liste, export Excel) et campagnes :
+                    rédaction, aperçu, e-mail de test, envoi progressif,
+                    lien de désinscription automatique.
+  Pages & SEO       Titre et description Google de chaque page (avec
+                    aperçu) + textes des mentions légales & conditions.
+  Coordonnées       Lien de réservation en ligne, adresse, téléphone,
+                    WhatsApp, e-mails, horaires, réseaux sociaux, devise,
+                    bandeau d'annonce.
+  E-mails (SMTP)    Serveur, port, identifiant, mot de passe de la boîte
+                    e-mail ; e-mail de test vers n'importe quelle adresse.
+  Mon compte        Changer le mot de passe.
+  Aide              Guide pas à pas des tâches courantes.
+
+
+=====================================================================
+  4. LES E-MAILS AUTOMATIQUES (au design du site)
+=====================================================================
+
+  Pour vous (contact@opaalbeauty.com) :
+    - Nouveau message
+    - Nouvel avis à valider
+  Pour la cliente :
+    - Message bien reçu
+    - Bienvenue dans la newsletter
+    - Vos newsletters (campagnes)
+  Pour vous : lien de réinitialisation du mot de passe.
+
+  Réglages : espace propriétaire > « E-mails (SMTP) » (ils remplacent
+  ceux de api/config.php) : serveur smtp.ionos.fr, port 465 (SSL),
+  identifiant contact@opaalbeauty.com.
+  Si les e-mails ne partent pas : essayez le port 587 avec
+  'encryption' => 'tls'. Si votre compte IONOS a été créé sur ionos.com,
+  remplacez le serveur par smtp.ionos.com.
+
+
+=====================================================================
+  5. RÉFÉRENCEMENT (SEO) — DÉJÀ EN PLACE
+=====================================================================
+
+  Chaque page est pré-rendue en HTML (lisible par Google sans
+  JavaScript) avec : titre et description uniques, adresse canonique,
+  balises de partage Facebook / WhatsApp / Instagram (Open Graph),
+  données structurées « BeautySalon » (adresse Amelkis, téléphone,
+  e-mail, plan, carte des soins), fil d'Ariane, sitemap.xml, robots.txt,
+  textes alternatifs sur toutes les images, redirection https et
+  domaine sans « www », vraie erreur 404, espace /admin exclu de Google.
+
+
+=====================================================================
+  6. SITE EN FRANÇAIS ET EN ANGLAIS
+=====================================================================
+
+  Adresses   Français : adresses habituelles (opaalbeauty.com/soins…).
+             Anglais  : même adresse précédée de /en (…/en/soins).
+             Les visiteurs changent de langue avec « FR | EN » en haut
+             du site (et dans le menu sur téléphone).
+
+  Activer / désactiver l'anglais
+             Espace propriétaire > « Langues du site ». Désactivé :
+             le sélecteur FR | EN disparaît, les pages /en renvoient
+             vers les pages françaises et sortent de Google. Vos
+             traductions sont conservées. Le français reste toujours actif.
+
+  Traduire vos contenus
+             En haut des pages Soins & tarifs, Offres & formules,
+             Images du site, Blog, Newsletter, Pages & SEO et
+             Coordonnées : onglets « Français / English ». En anglais,
+             les champs sont bleutés et le texte français s'affiche en
+             gris comme modèle. Un champ anglais vide = texte français
+             sur le site anglais (rien n'est jamais vide).
+             Les prix, photos, liens et réglages sont communs.
+             « Langues du site » montre l'avancement des traductions,
+             avec un bouton « Traduire » vers chaque page.
+
+  Déjà traduit
+             Tous les textes fixes du site (menus, boutons, pages,
+             e-mails, messages d'erreur), les soins et catégories
+             d'origine, les formules du club, les 3 articles du blog,
+             la newsletter d'exemple et les mentions légales (modèle
+             anglais à compléter comme la version française).
+
+  Blog       Un article est publié en anglais (/en/blog/…) dès que son
+             titre et son texte anglais sont remplis. Sinon, le site
+             anglais l'affiche avec la mention « Article in French ».
+
+  E-mails    Les clientes reçoivent les e-mails automatiques (message
+             reçu, bienvenue newsletter, demande d'avis, désinscription)
+             dans la langue du site qu'elles ont utilisé. Les messages,
+             avis et abonnées venus du site anglais portent l'étiquette EN.
+             Newsletter : les abonnées anglophones reçoivent la version
+             anglaise de la campagne si son objet et son texte sont remplis.
+             Les e-mails qui vous sont destinés partent dans la langue de
+             votre espace propriétaire.
+
+  Langue de l'espace propriétaire
+             « FR | EN » en haut à droite de l'espace propriétaire (et sur
+             l'écran de connexion). Mémorisé sur chaque appareil ; ne change
+             rien au site.
+
+
+=====================================================================
+  7. SÉCURITÉ DU SERVEUR (.htaccess)
+=====================================================================
+
+  Le fichier .htaccess de la racine (déjà inclus) :
+    - force le HTTPS et le domaine sans « www » ;
+    - bloque les fichiers cachés (.git, .env, .htaccess), sauvegardes,
+      bases de données, archives (.zip, .sql, .sqlite…) et fichiers de
+      configuration ;
+    - interdit tout script PHP en dehors du dossier api/ et n'accepte
+      que des images dans uploads/ ;
+    - filtre les requêtes malveillantes (injections SQL, scripts dans
+      l'adresse, remontée de dossiers « ../ », robots de piratage
+      connus, sondes WordPress / phpMyAdmin) ;
+    - ajoute les en-têtes de sécurité : HSTS, Content-Security-Policy,
+      X-Frame-Options (anti-clickjacking), X-Content-Type-Options,
+      Referrer-Policy, Permissions-Policy, Cross-Origin-Opener-Policy ;
+    - pages d'erreur 404 élégantes (française et anglaise).
+  api/.htaccess : seul api/index.php s'exécute ; config.php, src/,
+  vendor/ et data/ (base de données) sont inaccessibles depuis Internet.
+
+  Testé sur Apache 2.4 : 52 contrôles (pages, API, attaques) réussis.
+  Si l'hébergeur affiche « Erreur 500 » après l'envoi du .htaccess,
+  prévenez votre développeur (une directive n'est pas autorisée par
+  l'hébergeur et doit être retirée).
+
+
+=====================================================================
+  8. POUR UN DÉVELOPPEUR (dossier 2-code-source)
+=====================================================================
+
+  Prérequis : Node.js 22 ou plus, PHP 8.1 ou plus.
+
+  1. cd 2-code-source/api
+     copier config.example.php en config.php et le remplir
+  2. cd 2-code-source/frontend
+     npm install
+  3. Deux terminaux :
+       npm run api      -> API PHP sur http://localhost:8000
+       npm start        -> site sur http://localhost:4200 (proxy /api)
+  4. Mise en production :
+       npm run build
+     puis envoyer le contenu de dist/opaal/browser à la racine du site,
+     avec le dossier api/ (contenant votre config.php).
+
+  Node.js : Angular CLI 22.2 exige Node 24.15 ou plus récent. Avec une
+  version plus ancienne, lancer :
+       node node_modules/@angular/cli/bin/bootstrap.js build
+
+  Traductions : textes écrits en français dans le code, traduits par
+  dictionnaire (src/app/core/i18n-site-en.ts pour le site,
+  src/app/admin/i18n-admin-en.ts pour l'espace propriétaire,
+  api/src/lang-en.php pour l'API et les e-mails).
+       npm run i18n:check   -> signale tout texte sans traduction.
+  La base de données passe automatiquement en version 7 (colonnes
+  anglaises) au premier appel de l'API, sans perte de données.
+
+  Technique : Angular 22 (composants autonomes, signaux, sans zone.js),
+  pré-rendu (outputMode « static ») via @angular/ssr, formulaires
+  réactifs, animations en directives exécutées uniquement dans le
+  navigateur. API PHP 8 + SQLite (PDO) + PHPMailer. Sessions par jeton,
+  limitation des tentatives de connexion, anti-spam (champ piège),
+  validation côté serveur, échappement du HTML dans les e-mails.
